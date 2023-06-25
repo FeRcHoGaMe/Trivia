@@ -55,3 +55,15 @@
     -fx-alignment: center-left;
     -fx-padding: 5 0 0 0; /* Ajusta el relleno para separar los RadioButtons */
 }
+.title-label {
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 2, 2, 0, 0);
+    
+}
+
+
+
+
+

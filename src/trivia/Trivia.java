@@ -9,13 +9,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Stop;
 import javafx.animation.FadeTransition;
+import javafx.animation.RotateTransition;
+import javafx.animation.*;
+import javafx.scene.effect.InnerShadow;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.Lighting;
+import javafx.scene.effect.Reflection;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
+import javafx.scene.control.Label;
+import javafx.scene.effect.Light;
 
 public class Trivia extends Application {
 
@@ -44,6 +58,10 @@ public class Trivia extends Application {
 
         // Reproduce el sonido de fondo
         playBackgroundMusic();
+
+        // Agrega animación al título del panel de registro
+        Label titleLabel = (Label) root.lookup("#titleLabel");
+        addTitleAnimation(titleLabel);
     }
 
     public static void main(String[] args) {
@@ -89,7 +107,7 @@ public class Trivia extends Application {
         }
 
         questionTimer = new Timer();
-        int tiempoLimite = 10; // Tiempo límite en segundos
+        int tiempoLimite = 15; // Tiempo límite en segundos
 
         questionTimer.schedule(new TimerTask() {
             @Override
@@ -105,4 +123,34 @@ public class Trivia extends Application {
             questionTimer.cancel();
         }
     }
+
+    private void addTitleAnimation(Label titleLabel) {
+    Reflection reflection = new Reflection();
+    reflection.setFraction(0.2);
+
+    LinearGradient gradient = new LinearGradient(
+            0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
+            new Stop(0, Color.RED),
+            new Stop(0.5, Color.YELLOW),
+            new Stop(1, Color.GREEN)
+    );
+
+    InnerShadow innerShadow = new InnerShadow();
+    innerShadow.setOffsetX(2);
+    innerShadow.setOffsetY(2);
+    innerShadow.setColor(Color.BLACK);
+
+    titleLabel.setTextFill(gradient);
+    titleLabel.setEffect(innerShadow);
+
+    ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(1), titleLabel);
+    scaleTransition.setFromX(1);
+    scaleTransition.setFromY(1);
+    scaleTransition.setToX(1.5);
+    scaleTransition.setToY(1.5);
+    scaleTransition.setCycleCount(TranslateTransition.INDEFINITE);
+    scaleTransition.setAutoReverse(true);
+    scaleTransition.play();
+}
+
 }

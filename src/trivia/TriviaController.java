@@ -334,35 +334,45 @@ private void handleRegisterButton(ActionEvent event) {
 
     private boolean gameEnded = false;
 
-    public void endGame() {
-        if (gameEnded) {
-            return;
-        }
-
-        stopQuestionTimer();
-        gameEnded = true;
-
-        StringBuilder correctAnswers = new StringBuilder();
-        for (String[] questionData : questionsByTheme.get(currentTheme)) {
-            String question = questionData[0];
-            String correctAnswer = questionData[1];
-            correctAnswers.append(question).append(": ").append(correctAnswer).append("\n");
-        }
-
-        Platform.runLater(() -> {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Fin del juego");
-            alert.setHeaderText(null);
-            alert.setContentText("Juego terminado. Tu puntaje (" + usernameField.getText() + ") es " + score + " puntos.\n\n" +
-                    "Respuestas correctas:\n\n" + correctAnswers.toString());
-            alert.setResizable(true);
-            alert.getDialogPane().setPrefSize(500, 300);
-            alert.showAndWait();
-
-            Stage stage = (Stage) questionLabel.getScene().getWindow();
-            stage.close();
-        });
+   public void endGame() {
+    if (gameEnded) {
+        return;
     }
+
+    stopQuestionTimer();
+    gameEnded = true;
+
+    StringBuilder correctAnswers = new StringBuilder();
+    for (String[] questionData : questionsByTheme.get(currentTheme)) {
+        String question = questionData[0];
+        String correctAnswer = questionData[1];
+        correctAnswers.append(question).append(": ").append(correctAnswer).append("\n");
+    }
+
+    Platform.runLater(() -> {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Fin del juego");
+        alert.setHeaderText(null);
+        alert.setContentText("Juego terminado. Tu puntaje (" + usernameField.getText() + ") es " + score + " puntos.\n\n" +
+                "Respuestas correctas:\n\n" + correctAnswers.toString());
+        alert.setResizable(true);
+        alert.getDialogPane().setPrefSize(500, 300);
+        alert.show();
+
+        // Cerrar automáticamente después de tres segundos
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
+            alert.hide();  // Ocultar la ventana de respuestas
+
+            // Cerrar la aplicación JavaFX
+            Platform.exit();
+        }));
+        timeline.setCycleCount(1);
+        timeline.play();
+    });
+}
+
+
+
 
 
     private String getSelectedAnswer(String[] questionData) {

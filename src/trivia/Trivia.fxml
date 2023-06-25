@@ -5,6 +5,9 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.FloatMap?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,18 +20,25 @@
     <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
 
         <!-- Panel de registro de usuario -->
-        <VBox fx:id="registerPanel" alignment="CENTER" layoutX="192.0" layoutY="35.0" prefHeight="341.0" prefWidth="213.0" spacing="10" styleClass="registerPanel">
+        <VBox fx:id="registerPanel" alignment="CENTER" layoutX="228.0" layoutY="12.0" prefHeight="391.0" prefWidth="314.0" spacing="10" styleClass="registerPanel">
+            <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="377.0" styleClass="title-label" text="TRIVIANAUTAS" textAlignment="CENTER" />
             <Label text="Registro de Usuario" />
             <ImageView fitHeight="108.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
                 <image>
                     <Image url="@iconne.jpg" />
                 </image>
+            <effect>
+               <DropShadow />
+            </effect>
             </ImageView>
             <Label text="Nombre de usuario:" />
-            <TextField fx:id="usernameField" prefHeight="24.0" prefWidth="526.0" />
+            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="238.0" />
             <Label text="Contraseña:" />
             <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="363.0" />
-            <Button minHeight="0.0" onAction="#handleRegisterButton" prefHeight="78.0" prefWidth="189.0" text="Registrarse" />
+            <Button minHeight="0.0" onAction="#handleRegisterButton" prefHeight="50.0" prefWidth="189.0" text="Registrarse" />
+         <effect>
+            <DropShadow />
+         </effect>
         </VBox>
 
         <!-- Panel de selección de temas -->
@@ -37,13 +47,19 @@
                 <image>
                     <Image url="@cultutageneral.jpg" />
                 </image>
+            <effect>
+               <DisplacementMap>
+                  <mapData>
+                     <FloatMap />
+                  </mapData>
+               </DisplacementMap>
+            </effect>
             </ImageView>
             <Label text="Seleccione un tema:" />
             <Button onAction="#handleThemeButton" text="Cultura" />
             <Button onAction="#handleThemeButton" text="Deportes" />
             <Button onAction="#handleThemeButton" text="Historia" />
-            <Button onAction="#handleBackButton" text="Atrás" />
-            <Button onAction="#handleExitButton" text="Salir" />
+            
         </VBox>
 
         <!-- Panel de preguntas -->
@@ -64,11 +80,11 @@
             </HBox>
         </VBox>
 
-        <Label fx:id="scoreLabel" layoutX="408.0" layoutY="355.0" prefHeight="18.0" prefWidth="173.0" />
+        <Label fx:id="scoreLabel" layoutX="521.0" layoutY="368.0" prefHeight="18.0" prefWidth="173.0" />
 
         <!-- Estilos CSS -->
         <stylesheets>
-         
-        </stylesheets> 
+            
+        </stylesheets>
     </AnchorPane>
 </StackPane>
