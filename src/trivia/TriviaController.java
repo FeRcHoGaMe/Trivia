@@ -76,146 +76,58 @@ public class TriviaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        score = 0;
-        gameEnded = false;
+    score = 0;
+    gameEnded = false;
 
-        questionsByTheme = new HashMap<>();
-        questionsByTheme.put("Cultura", Arrays.asList(
-                new String[]{"¿En qué año ocurrió la Revolución Francesa?", "1789"},
-                new String[]{"¿Cuál es el autor de la obra 'Don Quijote de la Mancha'?", "Miguel de Cervantes"},
-                new String[]{"¿Cuál es la capital de Australia?", "Canberra"},
-                new String[]{"¿Cual es el autor de el libro Su Santidad Pecadora?", "Martín Sacristán Tordesillas"},
-                new String[]{"¿Cuál es la moneda oficial de Japón?", "Yen"},
-                new String[]{"¿Quién pintó la Mona Lisa?", "Leonardo da Vinci"},
-                new String[]{"¿Quién pintó la famosa obra La última cena?", "Leonardo da Vinci"},
-                new String[]{"¿Cuál es la obra literaria más conocida del escritor William Shakespeare?", "Romeo y Julieta"},
-                new String[]{"¿Cuál es el nombre de la obra de teatro más famosa de William Shakespeare?","Hamlet"},
-                new String[]{"¿¿Quién pintó la famosa obra de arte La persistencia de la memoria?","Salvador Dalí"},
-                new String[]{"¿Compositor conocido como el Príncipe de la Música, uno de los más grandes músicos?","Johann Sebastian Bach"}
-        ));
-        questionsByTheme.put("Deportes", Arrays.asList(
-                new String[]{"¿En qué deporte de élite se utiliza una raqueta para golpear una pelota?", "Tenis"},
-                new String[]{"¿Cuál es el país de origen del fútbol?", "Inglaterra"},
-                new String[]{"¿Cuál es el jugador de baloncesto con más campeonatos de la NBA?", "Michael Jordan"},
-                new String[]{"¿Donde nació el jugador al que le decían El Rey Pele?", "Brasil"},
-                new String[]{"¿Cuándo se celebró el primer mundial de fútbol?", "1930"},
-                new String[]{"¿Quién ganó el mundial de fútbol de 2010?", "España"},
-                new String[]{"¿Qué revista concede el Balón de Oro?", "La revista France Football"},
-                new String[]{"¿Cuál es el país de origen del tenista Roger Federer?","Suiza"}
-        ));
-        questionsByTheme.put("Historia", Arrays.asList(
-                new String[]{"¿En qué año se descubrió América?", "1492"},
-                new String[]{"¿Cuál fue el primer presidente de Estados Unidos?", "George Washington"},
-                new String[]{"¿Quién fue el líder de la Revolución Rusa en 1917?", "Vladimir Lenin"},
-                new String[]{"¿En qué país fue firmado el Tratado de Versalles y fue el acuerdo de paz que puso fin a la Primera Guerra Mundial?","Francia"},
-                new String[]{"¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?", "1776"},
-                new String[]{"¿Cuál fue el líder político y militar de la Unión Soviética durante la Segunda Guerra Mundial?","Joseph Stalin"},
-                new String[]{"¿En qué año cayó el Muro de Berlín, marcando el final de la Guerra Fría?","1989"},
-                new String[]{"¿Qué año marcó el lanzamiento del primer iPhone de Apple?","2007"},
-                new String[]{"¿Cuál fue la civilización antigua que construyó las famosas pirámides de Giza?","Civilización Egipcia"}
-                
-        ));
+    questionsByTheme = new HashMap<>();
+    questionsByTheme.put("Cultura", Arrays.asList(
+        new String[]{"¿En qué año ocurrió la Revolución Francesa?", "1789", "1790", "1788", "1792", "1"},
+        new String[]{"¿Cuál es el autor de la obra 'Don Quijote de la Mancha'?", "Miguel de Cervantes", "William Shakespeare", "Gabriel García Márquez", "Federico García Lorca", "1"},
+        new String[]{"¿Cuál es la capital de Australia?", "Canberra", "Sídney", "Melbourne", "Brisbane", "1"},
+        new String[]{"¿Cual es el autor de el libro Su Santidad Pecadora?", "Martín Sacristán Tordesillas", "Oscar Wilde", "Gabriel García Márquez", "Federico García Lorca", "1"},
+        new String[]{"¿Cuál es la moneda oficial de Japón?", "Yen", "Won", "Dólar", "Euro", "1"},
+        new String[]{"¿Quién pintó la Mona Lisa?", "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dalí", "1"},
+        new String[]{"¿Quién pintó la famosa obra La última cena?", "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dalí", "1"},
+        new String[]{"¿Cuál es la obra literaria más conocida del escritor William Shakespeare?", "Romeo y Julieta", "Macbeth", "Hamlet", "La tempestad", "1"},
+        new String[]{"¿Cuál es el nombre de la obra de teatro más famosa de William Shakespeare?", "Hamlet", "Romeo y Julieta", "Macbeth", "La tempestad", "1"},
+        new String[]{"¿¿Quién pintó la famosa obra de arte La persistencia de la memoria?", "Salvador Dalí", "Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "1"},
+        new String[]{"¿Compositor conocido como el Príncipe de la Música, uno de los más grandes músicos?", "Johann Sebastian Bach", "Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Franz Schubert", "1"}
+    ));
+    questionsByTheme.put("Deportes", Arrays.asList(
+        new String[]{"¿En qué deporte de élite se utiliza una raqueta para golpear una pelota?", "Tenis", "Golf", "Bádminton", "Ping Pong", "1"},
+        new String[]{"¿Cuál es el país de origen del fútbol?", "Inglaterra", "Brasil", "España", "Italia", "1"},
+        new String[]{"¿Cuál es el jugador de baloncesto con más campeonatos de la NBA?", "Michael Jordan", "LeBron James", "Kobe Bryant", "Magic Johnson", "1"},
+        new String[]{"¿Donde nació el jugador al que le decían El Rey Pelé?", "Brasil", "Argentina", "Uruguay", "Colombia", "1"},
+        new String[]{"¿Cuándo se celebró el primer mundial de fútbol?", "1930", "1934", "1938", "1950", "1"},
+        new String[]{"¿Quién ganó el mundial de fútbol de 2010?", "España", "Alemania", "Brasil", "Argentina", "1"},
+        new String[]{"¿Qué revista concede el Balón de Oro?", "La revista France Football", "FIFA", "UEFA", "ESPN", "1"},
+        new String[]{"¿Cuál es el país de origen del tenista Roger Federer?", "Suiza", "España", "Estados Unidos", "Australia", "1"}
+    ));
+    questionsByTheme.put("Historia", Arrays.asList(
+        new String[]{"¿En qué año se descubrió América?", "1492", "1491", "1490", "1493", "1"},
+        new String[]{"¿Cuál fue el primer presidente de Estados Unidos?", "George Washington", "Abraham Lincoln", "Thomas Jefferson", "John Adams", "1"},
+        new String[]{"¿Quién fue el líder de la Revolución Rusa en 1917?", "Vladimir Lenin", "Joseph Stalin", "Mijaíl Gorbachov", "Nicolás II", "1"},
+        new String[]{"¿En qué país fue firmado el Tratado de Versalles y fue el acuerdo de paz que puso fin a la Primera Guerra Mundial?", "Francia", "Reino Unido", "Estados Unidos", "Alemania", "1"},
+        new String[]{"¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?", "1776", "1789", "1804", "1824", "1"},
+        new String[]{"¿Cuál fue el líder político y militar de la Unión Soviética durante la Segunda Guerra Mundial?", "Joseph Stalin", "Vladimir Lenin", "Mijaíl Gorbachov", "Nikita Jrushchov", "1"},
+        new String[]{"¿En qué año cayó el Muro de Berlín, marcando el final de la Guerra Fría?", "1989", "1991", "1987", "1993", "1"},
+        new String[]{"¿Qué año marcó el lanzamiento del primer iPhone de Apple?", "2007", "2005", "2009", "2010", "1"},
+        new String[]{"¿Cuál fue la civilización antigua que construyó las famosas pirámides de Giza?", "Civilización Egipcia", "Civilización Azteca", "Civilización Inca", "Civilización Maya", "1"}
+    ));
 
-        ToggleGroup answerGroup = new ToggleGroup();
-        answer1RadioButton.setToggleGroup(answerGroup);
-        answer2RadioButton.setToggleGroup(answerGroup);
-        answer3RadioButton.setToggleGroup(answerGroup);
-        answer4RadioButton.setToggleGroup(answerGroup);
+    ToggleGroup answerGroup = new ToggleGroup();
+    answer1RadioButton.setToggleGroup(answerGroup);
+    answer2RadioButton.setToggleGroup(answerGroup);
+    answer3RadioButton.setToggleGroup(answerGroup);
+    answer4RadioButton.setToggleGroup(answerGroup);
 
-        passwordField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null && !newValue.isEmpty()) {
-                passwordField.setText("*".repeat(newValue.length()));
-            }
-        });
-    }
-
-    @FXML
-private void handleRegisterButton(ActionEvent event) {
-    VBox registerPanel = (VBox) ((Node) event.getSource()).getParent(); // Obtener el VBox padre del botón
-    VBox themePanel = (VBox) registerPanel.getScene().lookup("#themePanel");
-
-    FadeTransition fadeOutTransition = new FadeTransition(Duration.seconds(1), registerPanel);
-    fadeOutTransition.setFromValue(1.0);
-    fadeOutTransition.setToValue(0.0);
-    fadeOutTransition.setOnFinished(e -> {
-        registerPanel.setVisible(false);
-        themePanel.setVisible(true);
-        FadeTransition fadeInTransition = new FadeTransition(Duration.seconds(1), themePanel);
-        fadeInTransition.setFromValue(0.0);
-        fadeInTransition.setToValue(1.0);
-        fadeInTransition.play();
+    passwordField.textProperty().addListener((observable, oldValue, newValue) -> {
+        if (newValue != null && !newValue.isEmpty()) {
+            passwordField.setText("*".repeat(newValue.length()));
+        }
     });
-    fadeOutTransition.play();
 }
 
-
-
-
-
-    @FXML
-    private void handleThemeButton(ActionEvent event) {
-        Button selectedButton = (Button) event.getSource();
-        selectedTheme = selectedButton.getText();
-
-        themePanel.setVisible(false);
-        questionPanel.setVisible(true);
-
-        generateQuestions(selectedTheme);
-    }
-
-    private static final int CORRECT_ANSWER_SCORE = 15;
-
-    @FXML
-    private void handleNextButton(ActionEvent event) {
-        if (gameEnded) {
-            return;
-        }
-
-        stopQuestionTimer();
-
-        ToggleGroup answerGroup = answer1RadioButton.getToggleGroup();
-        RadioButton selectedRadioButton = (RadioButton) answerGroup.getSelectedToggle();
-        if (selectedRadioButton == null) {
-            showAlert("Advertencia", "Por favor, selecciona una respuesta antes de continuar.");
-            return;
-        }
-
-        String selectedAnswer = selectedRadioButton.getText();
-        String correctAnswer = getCorrectAnswer();
-
-        if (selectedAnswer.equals(correctAnswer)) {
-            score += CORRECT_ANSWER_SCORE;
-        }
-
-        scoreLabel.setText("Puntaje: " + score + " " + usernameField.getText());
-
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questionsByTheme.get(currentTheme).size()) {
-            // Continuar con la siguiente pregunta
-            String[] questionData = questionsByTheme.get(currentTheme).get(currentQuestionIndex);
-            questionLabel.setText(questionData[0]);
-            setAnswerOptions(questionData);
-            clearSelectedAnswer();
-
-            startQuestionTimer();
-        } else {
-            // No hay más preguntas, terminar el juego
-            endGame();
-        }
-    }
-
-    @FXML
-    private void handleBackButton(ActionEvent event) {
-        stopQuestionTimer();
-
-        questionPanel.setVisible(false);
-        themePanel.setVisible(true);
-    }
-
-    @FXML
-    private void handleExitButton(ActionEvent event) {
-        endGame();
-    }
 
     private void generateQuestions(String theme) {
         currentTheme = theme;
@@ -250,44 +162,24 @@ private void handleRegisterButton(ActionEvent event) {
     }
 
     private void setAnswerOptions(String[] questionData) {
-        answerOptions = new ArrayList<>();
-        answerOptions.add(questionData[1]); // Respuesta correcta
+    answerOptions = new ArrayList<>();
 
-        List<String> allAnswers = new ArrayList<>(Arrays.asList(
-    "1781", "1810", "1450", "Martín Eusebio Torca", "Lope de Vega",
-    "Quevedo y Góngora", "Su Santidad Pecadora", "Sidney", "Brisbane",
-    "Melbourne", "Tenis de Mesa", "brasil", "Argentina", "Uruguay",
-    "John Adams", "Franklin D. Roosevelt", "1415", "Zar Nicolás II",
-    "Nikolái Aleksándrovich Románov", "Mijaíl Rodzianko", "Kobe Bryant",
-    "James LeBron", "Shaquille O'Neal", "1932", "1954", "1940",
-    "La Revista Semana", "La Revista Del Futobol Mundial", "yen",
-    "Leonardo da Vinci", "Dolar", "Peso", "Sol", "Miguel Ángel Buonarroti",
-    "Pablo Picasso", "Vincent van Gogh", "Salvador Dalí", "Rafael Sanzio",
-    "Francia", "Estados Unidos", "Alemania", "Reino Unido", "Joseph Stalin",
-    "Adolf Hitler", "Benito Mussolini", "Winston Churchill", "2005", "2007",
-    "2010", "2012", "1776", "1789", "1812", "1865", "Australia", "España",
-    "Canada", "Romeo y Julieta", "Don Quijote de la Mancha", "Moby Dick",
-    "Cien años de soledad", "Civilización Inca", "Civilización Egipcia",
-    "Civilización Maya", "Civilización Azteca", "Hamlet", "Macbeth", "Otelo",
-    "Johann Sebastian Bach", "Franz Schubert", "Wolfgang Amadeus Mozart",
-    "Ludwig van Beethoven"
-));
+    // Agregar respuesta correcta
+    answerOptions.add(questionData[1]);
 
+    // Obtener todas las respuestas posibles
+    List<String> allAnswers = new ArrayList<>(Arrays.asList(questionData[1], questionData[2], questionData[3], questionData[4]));
 
-        allAnswers.remove(questionData[1]);
+    // Mezclar todas las respuestas posibles
+    Collections.shuffle(allAnswers);
 
-        Collections.shuffle(allAnswers);
-        List<String> incorrectAnswers = allAnswers.subList(0, 3);
+    // Configurar las opciones de respuesta en los RadioButtons
+    answer1RadioButton.setText(allAnswers.get(0));
+    answer2RadioButton.setText(allAnswers.get(1));
+    answer3RadioButton.setText(allAnswers.get(2));
+    answer4RadioButton.setText(allAnswers.get(3));
+}
 
-        answerOptions.addAll(incorrectAnswers);
-
-        Collections.shuffle(answerOptions);
-
-        answer1RadioButton.setText(answerOptions.get(0));
-        answer2RadioButton.setText(answerOptions.get(1));
-        answer3RadioButton.setText(answerOptions.get(2));
-        answer4RadioButton.setText(answerOptions.get(3));
-    }
 
     private void showCorrectAnswers() {
         questionPanel.setVisible(false);
@@ -372,9 +264,6 @@ private void handleRegisterButton(ActionEvent event) {
 }
 
 
-
-
-
     private String getSelectedAnswer(String[] questionData) {
         if (answer1RadioButton.getText().equals(questionData[1])) {
             return answer1RadioButton.getText();
@@ -388,4 +277,94 @@ private void handleRegisterButton(ActionEvent event) {
 
         return null;
     }
+
+
+// FXML
+
+    
+    @FXML
+private void handleRegisterButton(ActionEvent event) {
+    VBox registerPanel = (VBox) ((Node) event.getSource()).getParent(); // Obtener el VBox padre del botón
+    VBox themePanel = (VBox) registerPanel.getScene().lookup("#themePanel");
+
+    FadeTransition fadeOutTransition = new FadeTransition(Duration.seconds(1), registerPanel);
+    fadeOutTransition.setFromValue(1.0);
+    fadeOutTransition.setToValue(0.0);
+    fadeOutTransition.setOnFinished(e -> {
+        registerPanel.setVisible(false);
+        themePanel.setVisible(true);
+        FadeTransition fadeInTransition = new FadeTransition(Duration.seconds(1), themePanel);
+        fadeInTransition.setFromValue(0.0);
+        fadeInTransition.setToValue(1.0);
+        fadeInTransition.play();
+    });
+    fadeOutTransition.play();
+}
+
+
+    @FXML
+    private void handleThemeButton(ActionEvent event) {
+        Button selectedButton = (Button) event.getSource();
+        selectedTheme = selectedButton.getText();
+
+        themePanel.setVisible(false);
+        questionPanel.setVisible(true);
+
+        generateQuestions(selectedTheme);
+    }
+
+    private static final int CORRECT_ANSWER_SCORE = 15;
+
+    @FXML
+    private void handleNextButton(ActionEvent event) {
+        if (gameEnded) {
+            return;
+        }
+
+        stopQuestionTimer();
+
+        ToggleGroup answerGroup = answer1RadioButton.getToggleGroup();
+        RadioButton selectedRadioButton = (RadioButton) answerGroup.getSelectedToggle();
+        if (selectedRadioButton == null) {
+            showAlert("Advertencia", "Por favor, selecciona una respuesta antes de continuar.");
+            return;
+        }
+
+        String selectedAnswer = selectedRadioButton.getText();
+        String correctAnswer = getCorrectAnswer();
+
+        if (selectedAnswer.equals(correctAnswer)) {
+            score += CORRECT_ANSWER_SCORE;
+        }
+
+        scoreLabel.setText("Puntaje: " + score + " " + usernameField.getText());
+
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questionsByTheme.get(currentTheme).size()) {
+            // Continuar con la siguiente pregunta
+            String[] questionData = questionsByTheme.get(currentTheme).get(currentQuestionIndex);
+            questionLabel.setText(questionData[0]);
+            setAnswerOptions(questionData);
+            clearSelectedAnswer();
+
+            startQuestionTimer();
+        } else {
+            // No hay más preguntas, terminar el juego
+            endGame();
+        }
+    }
+
+    @FXML
+    private void handleBackButton(ActionEvent event) {
+        stopQuestionTimer();
+
+        questionPanel.setVisible(false);
+        themePanel.setVisible(true);
+    }
+
+    @FXML
+    private void handleExitButton(ActionEvent event) {
+        endGame();
+    }
+
 }
