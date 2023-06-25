@@ -107,9 +107,9 @@ public class TriviaController implements Initializable {
         new String[]{"¿En qué año se descubrió América?", "1492", "1491", "1490", "1493", "1"},
         new String[]{"¿Cuál fue el primer presidente de Estados Unidos?", "George Washington", "Abraham Lincoln", "Thomas Jefferson", "John Adams", "1"},
         new String[]{"¿Quién fue el líder de la Revolución Rusa en 1917?", "Vladimir Lenin", "Joseph Stalin", "Mijaíl Gorbachov", "Nicolás II", "1"},
-        new String[]{"¿En qué país fue firmado el Tratado de Versalles y fue el acuerdo de paz que puso fin a la Primera Guerra Mundial?", "Francia", "Reino Unido", "Estados Unidos", "Alemania", "1"},
+        new String[]{"¿En qué país fue firmado el Tratado de Versalles,en la Primera Guerra Mundial?", "Francia", "Reino Unido", "Estados Unidos", "Alemania", "1"},
         new String[]{"¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?", "1776", "1789", "1804", "1824", "1"},
-        new String[]{"¿Cuál fue el líder político y militar de la Unión Soviética durante la Segunda Guerra Mundial?", "Joseph Stalin", "Vladimir Lenin", "Mijaíl Gorbachov", "Nikita Jrushchov", "1"},
+        new String[]{"¿Cuál fue el líder político y militar de la Unión Soviética en la Segunda Guerra Mundial?", "Joseph Stalin", "Vladimir Lenin", "Mijaíl Gorbachov", "Nikita Jrushchov", "1"},
         new String[]{"¿En qué año cayó el Muro de Berlín, marcando el final de la Guerra Fría?", "1989", "1991", "1987", "1993", "1"},
         new String[]{"¿Qué año marcó el lanzamiento del primer iPhone de Apple?", "2007", "2005", "2009", "2010", "1"},
         new String[]{"¿Cuál fue la civilización antigua que construyó las famosas pirámides de Giza?", "Civilización Egipcia", "Civilización Azteca", "Civilización Inca", "Civilización Maya", "1"}
