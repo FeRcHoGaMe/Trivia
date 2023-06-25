@@ -254,64 +254,25 @@ private void handleRegisterButton(ActionEvent event) {
         answerOptions.add(questionData[1]); // Respuesta correcta
 
         List<String> allAnswers = new ArrayList<>(Arrays.asList(
-                "1781","1810","1450","Martín Eusebio Torca","Lope de Vega",
-                "Quevedo y Góngora","Su Santidad Pecadora","Sidney","Brisbane",
-                "Melbourne","Tenis de Mesa","brasil","Argentina","Uruguay",
-                "John Adams","Franklin D. Roosevelt","1415","Zar Nicolás II",
-                "Nikolái Aleksándrovich Románov","Mijaíl Rodzianko","Kobe Bryant",
-                "James LeBron","Shaquille O'Neal","1932","1954","1940",
-                "La Revista Semana","La Revista Del Futobol Mundial",
-                "yen",
-                "Leonardo da Vinci",
-                "Dolar",
-                "Peso",
-                "Sol",
-                "Miguel Ángel Buonarroti",
-                "Pablo Picasso",
-                "Vincent van Gogh",
-                "Salvador Dalí",
-                "Rafael Sanzio",
-                "Francia",
-                "Estados Unidos",
-                "Alemania",
-                "Reino Unido",
-                "Joseph Stalin",
-                "Adolf Hitler",
-                "Benito Mussolini",
-                "Winston Churchill",
-                "2005",
-                "2007",
-                "2010",
-                "2012",
-                "1776",
-                "1789",
-                "1812",
-                "1865",
-                "Australia",
-                "España",
-                "Canada",
-                "Romeo y Julieta",
-                "Don Quijote de la Mancha",
-                "Moby Dick",
-                "Cien años de soledad",
-                "Civilización Inca",
-                "Civilización Egipcia",
-                "Civilización Maya",
-                "Civilización Azteca",
-                "Hamlet",
-                "Macbeth",
-                "Otelo",
-                "Johann Sebastian Bach",
-                "Franz Schubert",
-                "Wolfgang Amadeus Mozart",
-                "Ludwig van Beethoven"
-                
-                
-                
-                
-                
-        
-        ));
+    "1781", "1810", "1450", "Martín Eusebio Torca", "Lope de Vega",
+    "Quevedo y Góngora", "Su Santidad Pecadora", "Sidney", "Brisbane",
+    "Melbourne", "Tenis de Mesa", "brasil", "Argentina", "Uruguay",
+    "John Adams", "Franklin D. Roosevelt", "1415", "Zar Nicolás II",
+    "Nikolái Aleksándrovich Románov", "Mijaíl Rodzianko", "Kobe Bryant",
+    "James LeBron", "Shaquille O'Neal", "1932", "1954", "1940",
+    "La Revista Semana", "La Revista Del Futobol Mundial", "yen",
+    "Leonardo da Vinci", "Dolar", "Peso", "Sol", "Miguel Ángel Buonarroti",
+    "Pablo Picasso", "Vincent van Gogh", "Salvador Dalí", "Rafael Sanzio",
+    "Francia", "Estados Unidos", "Alemania", "Reino Unido", "Joseph Stalin",
+    "Adolf Hitler", "Benito Mussolini", "Winston Churchill", "2005", "2007",
+    "2010", "2012", "1776", "1789", "1812", "1865", "Australia", "España",
+    "Canada", "Romeo y Julieta", "Don Quijote de la Mancha", "Moby Dick",
+    "Cien años de soledad", "Civilización Inca", "Civilización Egipcia",
+    "Civilización Maya", "Civilización Azteca", "Hamlet", "Macbeth", "Otelo",
+    "Johann Sebastian Bach", "Franz Schubert", "Wolfgang Amadeus Mozart",
+    "Ludwig van Beethoven"
+));
+
 
         allAnswers.remove(questionData[1]);
 
