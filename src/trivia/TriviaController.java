@@ -84,7 +84,14 @@ public class TriviaController implements Initializable {
                 new String[]{"¿En qué año ocurrió la Revolución Francesa?", "1789"},
                 new String[]{"¿Cuál es el autor de la obra 'Don Quijote de la Mancha'?", "Miguel de Cervantes"},
                 new String[]{"¿Cuál es la capital de Australia?", "Canberra"},
-                new String[]{"¿Cual es el autor de el libro Su Santidad Pecadora?", "Martín Sacristán Tordesillas"}
+                new String[]{"¿Cual es el autor de el libro Su Santidad Pecadora?", "Martín Sacristán Tordesillas"},
+                new String[]{"¿Cuál es la moneda oficial de Japón?", "Yen"},
+                new String[]{"¿Quién pintó la Mona Lisa?", "Leonardo da Vinci"},
+                new String[]{"¿Quién pintó la famosa obra La última cena?", "Leonardo da Vinci"},
+                new String[]{"¿Cuál es la obra literaria más conocida del escritor William Shakespeare?", "Romeo y Julieta"},
+                new String[]{"¿Cuál es el nombre de la obra de teatro más famosa de William Shakespeare?","Hamlet"},
+                new String[]{"¿¿Quién pintó la famosa obra de arte La persistencia de la memoria?","Salvador Dalí"},
+                new String[]{"¿Compositor conocido como el Príncipe de la Música, uno de los más grandes músicos?","Johann Sebastian Bach"}
         ));
         questionsByTheme.put("Deportes", Arrays.asList(
                 new String[]{"¿En qué deporte de élite se utiliza una raqueta para golpear una pelota?", "Tenis"},
@@ -93,12 +100,20 @@ public class TriviaController implements Initializable {
                 new String[]{"¿Donde nació el jugador al que le decían El Rey Pele?", "Brasil"},
                 new String[]{"¿Cuándo se celebró el primer mundial de fútbol?", "1930"},
                 new String[]{"¿Quién ganó el mundial de fútbol de 2010?", "España"},
-                new String[]{"¿Qué revista concede el Balón de Oro?", "La revista France Football"}
+                new String[]{"¿Qué revista concede el Balón de Oro?", "La revista France Football"},
+                new String[]{"¿Cuál es el país de origen del tenista Roger Federer?","Suiza"}
         ));
         questionsByTheme.put("Historia", Arrays.asList(
                 new String[]{"¿En qué año se descubrió América?", "1492"},
                 new String[]{"¿Cuál fue el primer presidente de Estados Unidos?", "George Washington"},
-                new String[]{"¿Quién fue el líder de la Revolución Rusa en 1917?", "Vladimir Lenin"}
+                new String[]{"¿Quién fue el líder de la Revolución Rusa en 1917?", "Vladimir Lenin"},
+                new String[]{"¿En qué país fue firmado el Tratado de Versalles y fue el acuerdo de paz que puso fin a la Primera Guerra Mundial?","Francia"},
+                new String[]{"¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?", "1776"},
+                new String[]{"¿Cuál fue el líder político y militar de la Unión Soviética durante la Segunda Guerra Mundial?","Joseph Stalin"},
+                new String[]{"¿En qué año cayó el Muro de Berlín, marcando el final de la Guerra Fría?","1989"},
+                new String[]{"¿Qué año marcó el lanzamiento del primer iPhone de Apple?","2007"},
+                new String[]{"¿Cuál fue la civilización antigua que construyó las famosas pirámides de Giza?","Civilización Egipcia"}
+                
         ));
 
         ToggleGroup answerGroup = new ToggleGroup();
@@ -239,34 +254,63 @@ private void handleRegisterButton(ActionEvent event) {
         answerOptions.add(questionData[1]); // Respuesta correcta
 
         List<String> allAnswers = new ArrayList<>(Arrays.asList(
-                "1781",
-                "1810",
-                "1450",
-                "Martín Eusebio Torca",
-                "Lope de Vega",
-                "Quevedo y Góngora",
-                "Su Santidad Pecadora",
-                "Sidney",
-                "Brisbane",
-                "Melbourne",
-                "Tenis de Mesa",
-                "brasil",
-                "Argentina",
-                "Uruguay",
-                "John Adams",
-                "Franklin D. Roosevelt",
-                "1415",
-                "Zar Nicolás II",
-                "Nikolái Aleksándrovich Románov",
-                "Mijaíl Rodzianko",
-                "Kobe Bryant",
-                "James LeBron",
-                "Shaquille O'Neal",
-                "1932",
-                "1954",
-                "1940",
-                "La Revista Semana",
-                "La Revista Del Futobol Mundial"
+                "1781","1810","1450","Martín Eusebio Torca","Lope de Vega",
+                "Quevedo y Góngora","Su Santidad Pecadora","Sidney","Brisbane",
+                "Melbourne","Tenis de Mesa","brasil","Argentina","Uruguay",
+                "John Adams","Franklin D. Roosevelt","1415","Zar Nicolás II",
+                "Nikolái Aleksándrovich Románov","Mijaíl Rodzianko","Kobe Bryant",
+                "James LeBron","Shaquille O'Neal","1932","1954","1940",
+                "La Revista Semana","La Revista Del Futobol Mundial",
+                "yen",
+                "Leonardo da Vinci",
+                "Dolar",
+                "Peso",
+                "Sol",
+                "Miguel Ángel Buonarroti",
+                "Pablo Picasso",
+                "Vincent van Gogh",
+                "Salvador Dalí",
+                "Rafael Sanzio",
+                "Francia",
+                "Estados Unidos",
+                "Alemania",
+                "Reino Unido",
+                "Joseph Stalin",
+                "Adolf Hitler",
+                "Benito Mussolini",
+                "Winston Churchill",
+                "2005",
+                "2007",
+                "2010",
+                "2012",
+                "1776",
+                "1789",
+                "1812",
+                "1865",
+                "Australia",
+                "España",
+                "Canada",
+                "Romeo y Julieta",
+                "Don Quijote de la Mancha",
+                "Moby Dick",
+                "Cien años de soledad",
+                "Civilización Inca",
+                "Civilización Egipcia",
+                "Civilización Maya",
+                "Civilización Azteca",
+                "Hamlet",
+                "Macbeth",
+                "Otelo",
+                "Johann Sebastian Bach",
+                "Franz Schubert",
+                "Wolfgang Amadeus Mozart",
+                "Ludwig van Beethoven"
+                
+                
+                
+                
+                
+        
         ));
 
         allAnswers.remove(questionData[1]);
