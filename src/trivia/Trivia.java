@@ -33,8 +33,8 @@ import javafx.scene.effect.Light;
 
 public class Trivia extends Application {
 
-    private static final String BACKGROUND_SOUND = "C:\\Users\\latin\\OneDrive\\Documentos\\NetBeansProjects\\Trivia\\Sounds\\Beijing_Bass.wav";
-    private static final String CLICK_SOUND = "C:\\Users\\latin\\OneDrive\\Documentos\\NetBeansProjects\\Trivia\\Sounds\\RespuestaCorrecta.wav";
+    private static final String BACKGROUND_SOUND = "C:\\Users\\user\\Documents\\Politecnico\\Semestre 3\\Bloque 2\\Paradigmas de programacion\\Trivia\\Sounds\\Beijing_Bass.wav";
+    private static final String CLICK_SOUND = "C:\\Users\\user\\Documents\\Politecnico\\Semestre 3\\Bloque 2\\Paradigmas de programacion\\Trivia\\Sounds\\RespuestaCorrecta.wav";
 
     private static Clip backgroundClip;
     private static Clip clickClip;
@@ -73,6 +73,21 @@ public class Trivia extends Application {
             AudioInputStream backgroundStream = AudioSystem.getAudioInputStream(new File(BACKGROUND_SOUND));
             backgroundClip = AudioSystem.getClip();
             backgroundClip.open(backgroundStream);
+            
+            FloatControl volumeControl = (FloatControl) backgroundClip.getControl(FloatControl.Type.MASTER_GAIN);
+        
+             // Define el volumen deseado en decibelios (-40.0f = silencio, 0.0f = volumen máximo)
+            float volume = -25.0f; // Ajusta este valor según el volumen deseado
+        
+              // Calcula el rango válido para el control de volumen
+             float minVolume = volumeControl.getMinimum();
+             float maxVolume = volumeControl.getMaximum();
+        
+                // Ajusta el volumen en el rango válido
+              volume = Math.max(minVolume, Math.min(volume, maxVolume));
+        
+                // Establece el volumen en el clip
+               volumeControl.setValue(volume);
 
             AudioInputStream clickStream = AudioSystem.getAudioInputStream(new File(CLICK_SOUND));
             clickClip = AudioSystem.getClip();
