@@ -33,8 +33,9 @@ import javafx.scene.effect.Light;
 
 public class Trivia extends Application {
 
-    private static final String BACKGROUND_SOUND = "C:\\Users\\user\\Documents\\Politecnico\\Semestre 3\\Bloque 2\\Paradigmas de programacion\\Trivia\\Sounds\\Beijing_Bass.wav";
-    private static final String CLICK_SOUND = "C:\\Users\\user\\Documents\\Politecnico\\Semestre 3\\Bloque 2\\Paradigmas de programacion\\Trivia\\Sounds\\RespuestaCorrecta.wav";
+    private static final String BACKGROUND_SOUND = "Sounds/Beijing_Bass.wav";
+    private static final String CLICK_SOUND = "Sounds/RespuestaCorrecta.wav";
+
 
     private static Clip backgroundClip;
     private static Clip clickClip;
