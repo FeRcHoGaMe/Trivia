@@ -20,7 +20,7 @@
     <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
 
         <!-- Panel de registro de usuario -->
-        <VBox fx:id="registerPanel" alignment="CENTER" layoutX="228.0" layoutY="12.0" prefHeight="391.0" prefWidth="314.0" spacing="10" styleClass="registerPanel">
+        <VBox fx:id="registerPanel" alignment="CENTER" layoutX="228.0" layoutY="12.0" prefHeight="378.0" prefWidth="314.0" spacing="10" styleClass="registerPanel">
             <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="377.0" styleClass="title-label" text="TRIVIANAUTAS" textAlignment="CENTER" />
             <Label text="Registro de Usuario" />
             <ImageView fitHeight="108.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
