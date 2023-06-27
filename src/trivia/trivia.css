@@ -8,41 +8,88 @@
     -fx-background-color: #ffffff;
     -fx-padding: 10;
     -fx-spacing: 10;
+    -fx-background-radius: 10px;
+}
+
+#registerPanel .label {
+    /* Estilos para los labels dentro del registerPanel */
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+#registerPanel #titleLabel {
+    /* Estilos específicos para el label con id "titleLabel" */
+    -fx-font-size: 24px;
+    -fx-text-fill: #000000;
+}
+
+#registerPanel ImageView {
+    /* Estilos para la imagen dentro del registerPanel */
+    -fx-transition-duration: 1s;
+    -fx-transition-timing-function: linear;
+}
+
+#registerPanel ImageView:hover {
+    /* Estilos para la imagen cuando el cursor está sobre ella */
+    -fx-animation: rotation 5s linear infinite; /* Aumentar la duración a 5 segundos */
+}
+
+@keyframes rotation {
+    from {
+        -fx-rotate: 0deg;
+    }
+    to {
+        -fx-rotate: 360deg;
+    }
 }
 
 .themePanel {
     /* Estilos para el panel de selección de temas */
-    -fx-background-color: #ffffff;
+    -fx-background-color: #f0f0f0;
     -fx-padding: 10;
     -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-background-radius: 10px;
 }
 
 .questionPanel {
     /* Estilos para el panel de preguntas */
-    -fx-background-color: #ffffff;
-    -fx-padding: 10;
+    -fx-background-color: #191919;
+    -fx-padding: 20;
     -fx-spacing: 10;
 }
 
 .questionLabel {
     /* Estilos para la etiqueta de pregunta */
-    -fx-font-size: 18px;
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #000000, 5, 0, 0, 0);
 }
 
 .timerLabel {
     /* Estilos para la etiqueta de tiempo restante */
-    -fx-font-size: 14px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #000000, 3, 0, 0, 0);
 }
 
 .remainingTimeLabel {
     /* Estilos para la etiqueta de tiempo restante */
-    -fx-font-size: 14px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #000000, 3, 0, 0, 0);
 }
 
 .scoreLabel {
     /* Estilos para la etiqueta de puntuación */
-    -fx-font-size: 14px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #000000, 3, 0, 0, 0);
 }
 
 .questionPanel .radio-box {
@@ -53,8 +100,30 @@
 .questionPanel .radio-box .radio-button {
     /* Alinea los RadioButtons verticalmente */
     -fx-alignment: center-left;
-    -fx-padding: 5 0 0 0; /* Ajusta el relleno para separar los RadioButtons */
+    -fx-padding: 10 0 0 0; /* Ajusta el relleno para separar los RadioButtons */
 }
+
+.questionPanel .radio-box .radio-button .radio {
+    /* Estilos para los RadioButtons */
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 50%;
+    -fx-border-width: 2px;
+}
+
+.questionPanel .radio-box .radio-button .radio:selected {
+    /* Estilos para los RadioButtons seleccionados */
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ff0000;
+    -fx-border-radius: 50%;
+    -fx-border-width: 2px;
+}
+
+.questionPanel .radio-box .radio-button .radio:hover {
+    /* Estilos para los RadioButtons cuando el cursor está sobre ellos */
+    -fx-border-color: #ff0000;
+}
+
 .title-label {
     -fx-font-family: "Arial Black";
     -fx-font-size: 24px;
